@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game Store | Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: radial-gradient(circle at top, #1b1b1b, #0a0a0a);
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: #111;
+            padding: 50px 60px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 0 40px rgba(0, 242, 234, 0.15);
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        h1 span {
+            color: #00f2ea;
+        }
+
+        p {
+            font-size: 14px;
+            opacity: 0.7;
+            margin-bottom: 40px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .btn {
+            padding: 14px 34px;
+            border-radius: 30px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .login {
+            background: #00f2ea;
+            color: #000;
+        }
+
+        .signup {
+            background: transparent;
+            color: #00f2ea;
+            border: 2px solid #00f2ea;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 242, 234, 0.3);
+        }
+
+        footer {
+            margin-top: 40px;
+            font-size: 12px;
+            opacity: 0.4;
+        }
+
+        @media (max-width: 500px) {
+            .container {
+                padding: 40px 30px;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1><span>GAME</span> Store</h1>
+        <p>Login or create an account to continue</p>
+
+        <div class="buttons">
+            <a href="/login" target="_blank">
+                <button class="btn login">LOGIN</button>
+            </a>
+
+            <a href="/signup" target="_blank">
+                <button class="btn signup">SIGN UP</button>
+            </a>
+        </div>
+
+        <footer>
+            © 2026 Game Store. All rights reserved.
+        </footer>
+    </div>
+
+</body>
+</html>

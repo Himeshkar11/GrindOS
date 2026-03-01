@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game Store | Registration</title>
+    <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+
+<div class="container">
+
+    <!-- LEFT SECTION -->
+    <div class="left">
+        <div class="logo">
+            🎮 <span>GAME</span> store
+        </div>
+
+        <h1><span>Registration</span><br>of your account</h1>
+
+        <form id="registerForm">
+
+            <label>Email or Login</label>
+            <input
+                type="email"
+                id="email"
+                placeholder="Enter email"
+                required
+            />
+
+            <label>Password</label>
+            <input
+                type="password"
+                id="password"
+                placeholder="Enter password"
+                required
+            />
+
+            <label>Confirm Password</label>
+            <input
+                type="password"
+                id="confirm"
+                placeholder="Confirm password"
+                required
+            />
+
+            <div class="rules">
+                <span>✔ Uppercase</span>
+                <span>✔ Lowercase</span>
+                <span>✔ Number</span>
+            </div>
+
+            <button type="submit">SIGN UP</button>
+
+            <p class="terms">
+                By clicking Sign up, you agree to our
+                <a href="#">Terms</a> and
+                <a href="#">Privacy Policy</a>.
+            </p>
+        </form>
+    </div>
+
+    <!-- RIGHT SECTION -->
+    <div class="right">
+        <div class="overlay">
+            <h2>Hello!</h2>
+            <p>
+                It’s great to see you in our Game store!
+                We have so many captivating projects for you.
+                Just sign up and visit our app store with different selections.
+                And don’t forget to invite your friends to play together!
+            </p>
+
+            <p class="signin">
+                Already have an account? <a href="/login">SIGN IN</a>
+            </p>
+        </div>
+    </div>
+
+</div>
+
+<script>
+document.getElementById("registerForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    const confirm = document.getElementById("confirm").value;
+
+    if (password !== confirm) {
+        alert("Passwords do not match");
+        return;
+    }
+
+    try {
+        const response = await fetch("/register", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ email, password })
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+            alert("Registration successful! Redirecting to login...");
+            window.location.href = "/login";   // 🔥 REDIRECT
+        } else {
+            alert(data.message);
+        }
+
+    } catch (error) {
+        alert("Server error. Is Flask running?");
+    }
+});
+</script>
+
+</body>
+</html>

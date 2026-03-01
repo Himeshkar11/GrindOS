@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game Store | Login</title>
+    <link rel="stylesheet" href="/static/login.css" />
+</head>
+<body>
+
+<div class="container">
+
+    <!-- LEFT -->
+    <div class="left">
+        <h1><span>Authorization</span><br>of your account</h1>
+
+        <form id="loginForm">
+
+            <label>Email or Login</label>
+            <input
+                type="email"
+                id="email"
+                placeholder="Enter email"
+                required
+            />
+
+            <label>Password</label>
+            <input
+                type="password"
+                id="password"
+                placeholder="Enter password"
+                required
+            />
+
+            <div class="actions">
+                <button type="submit">SIGN IN</button>
+                <label class="remember">
+                    <input type="checkbox" /> Remember me
+                </label>
+            </div>
+
+            <p class="forgot">Forgot your password?</p>
+        </form>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="right">
+        <h2>Hello!</h2>
+        <p>
+            It’s great to see you again!
+            Just log in and visit our app store with new selections.
+        </p>
+
+        <p class="signup">
+            Don’t have an account? <a href="/signup">SIGN UP</a>
+        </p>
+    </div>
+
+</div>
+
+<script>
+document.getElementById("loginForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    try {
+        const response = await fetch("/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email, password })
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+            // 🔥 Backend-controlled redirect
+            window.location.href = data.redirect;
+        } else {
+            alert(data.message);
+        }
+
+    } catch (error) {
+        alert("Server error. Is Flask running?");
+    }
+});
+</script>
+
+</body>
+</html>
+
+</body>
+</html>

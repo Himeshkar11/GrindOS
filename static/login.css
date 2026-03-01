@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    background: #0f0f0f;
+    color: white;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* LEFT */
+.left {
+    width: 50%;
+    padding: 80px;
+    background: #111;
+}
+
+.left h1 {
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+.left h1 span {
+    color: #00f2ea;
+}
+
+form {
+    max-width: 400px;
+}
+
+label {
+    font-size: 12px;
+    margin-top: 20px;
+    display: block;
+    opacity: 0.8;
+}
+
+input {
+    width: 100%;
+    padding: 12px 15px;
+    margin-top: 6px;
+    border-radius: 25px;
+    border: 1px solid #333;
+    background: #1c1c1c;
+    color: white;
+}
+
+.actions {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+button {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    background: #00f2ea;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.remember {
+    font-size: 12px;
+}
+
+.forgot {
+    margin-top: 15px;
+    font-size: 12px;
+    opacity: 0.6;
+}
+
+/* RIGHT */
+.right {
+    width: 50%;
+    padding: 80px;
+    background: linear-gradient(120deg, #00f2ea, #b100ff);
+}
+
+.right h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.right p {
+    max-width: 400px;
+    line-height: 1.6;
+}
+
+.signup {
+    margin-top: 30px;
+}
+
+.signup a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+    }
+    .left, .right {
+        width: 100%;
+    }
+}

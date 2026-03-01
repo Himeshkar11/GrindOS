@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    background: #0f0f0f;
+    color: white;
+}
+
+/* MAIN LAYOUT */
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* LEFT SIDE */
+.left {
+    width: 50%;
+    padding: 60px;
+    background: #111;
+}
+
+.logo {
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+
+.logo span {
+    color: #00f2ea;
+    font-weight: bold;
+}
+
+.left h1 {
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+.left h1 span {
+    color: #00f2ea;
+}
+
+form {
+    max-width: 400px;
+}
+
+label {
+    display: block;
+    font-size: 12px;
+    margin-bottom: 6px;
+    margin-top: 20px;
+    opacity: 0.8;
+}
+
+input {
+    width: 100%;
+    padding: 12px 15px;
+    background: #1c1c1c;
+    border: 1px solid #333;
+    border-radius: 25px;
+    color: white;
+    outline: none;
+}
+
+input::placeholder {
+    color: #777;
+}
+
+.rules {
+    display: flex;
+    gap: 15px;
+    font-size: 12px;
+    margin: 20px 0;
+    opacity: 0.8;
+}
+
+button {
+    width: 140px;
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    background: #00f2ea;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+button:hover {
+    opacity: 0.85;
+}
+
+.terms {
+    font-size: 11px;
+    opacity: 0.6;
+}
+
+.terms a {
+    color: #00f2ea;
+    text-decoration: none;
+}
+
+/* RIGHT SIDE */
+.right {
+    width: 50%;
+    background: linear-gradient(
+        rgba(255, 0, 150, 0.6),
+        rgba(100, 0, 255, 0.6)
+    ),
+    url("https://images.unsplash.com/photo-1605902711622-cfb43c4437d1");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.overlay {
+    padding: 80px 60px;
+}
+
+.overlay h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.overlay p {
+    font-size: 14px;
+    line-height: 1.6;
+    max-width: 420px;
+}
+
+.signin {
+    margin-top: 30px;
+    font-size: 13px;
+}
+
+.signin a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .left, .right {
+        width: 100%;
+    }
+}
